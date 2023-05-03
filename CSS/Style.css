@@ -1,0 +1,420 @@
+body {
+    display: grid;
+    height: 100vh;
+    margin: 0;
+    place-items: center;
+    width: 100%;
+    background-color: #ff9d00;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23ff9d00' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fb8d17' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f47d24' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23ed6e2d' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23e35f34' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d85239' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23cc453e' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23be3941' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23b02f43' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23a02644' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23901e44' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23801843' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%236f1341' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%235e0f3d' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%234e0c38' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%233e0933' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%232e062c' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    counter-reset: score;
+}
+
+h1{
+    color: #A64935;
+    text-align: center;
+}
+
+.phone {
+    background: #CCEFFF;
+    border: 8px solid black;
+    border-radius: 40px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30),
+                0 15px 12px rgba(0,0,0,0.22);
+    height: 600px;
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+img
+{
+    width: 250px;
+    height: 37.84px;
+    margin: 40px auto 0 auto;
+    align-items: center;
+}
+input[type=checkbox] {
+    position: absolute;
+    appearance: none;
+    cursor: pointer;
+    z-index: 1;
+    width: 100%;
+    height: 80px;
+}
+input:checked
+{
+    counter-increment: score;
+}
+.score::after
+{
+    content: counter(score);
+}
+.layer-1 {
+    bottom: 0;
+    height: 450px;
+    position: absolute;
+    right: 60px;
+    width: 80px;
+    z-index: 1;
+
+    animation-name: layer;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite ;
+}
+@keyframes layer
+{
+    0%
+    {
+        bottom: 0;
+    }
+    25%
+    {
+        transform: translate(0 , 60px);
+    }
+    75%
+    {
+        transform: translate(0 , 60px);
+    }
+    100%
+    {
+        bottom: 0;
+    }
+}
+.layer-2 {
+    bottom: 0;
+    height: 450px;
+    position: absolute;
+    left: 60px;
+    width: 80px;
+    z-index: 2;
+
+    animation-name: layer;
+    animation-duration: 3s;
+    animation-timing-function: easeInQuad;
+    animation-iteration-count: infinite ;
+}
+
+.layer-3 {
+    background: rgb(197, 142, 100);
+    border-radius: 20px;
+    bottom: 0;
+    height: 400px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 220px;
+    z-index: 3;
+    box-shadow:  5px 20px 30px 0 black;    
+}
+
+.layer-4 {
+    bottom: 0;
+    height: 350px;
+    left: 15px;
+    position: absolute;
+    width: 80px;
+    z-index: 4;
+
+    animation-name: layer;
+    animation-duration: 2s;
+    animation-timing-function: easeInQuad;
+    animation-iteration-count: infinite ;
+}
+
+.layer-5 {
+    background: rgb(161, 109, 69);
+    border-radius: 20px;
+    bottom: 0;
+    height: 300px;
+    position: absolute;
+    width: 200px;
+    z-index: 5;
+    box-shadow:  5px 20px 30px 0 black;
+}
+
+.layer-6 {
+    bottom: 0;
+    height: 250px;
+    position: absolute;
+    right: 30px;
+    width: 80px;
+    z-index: 6;
+
+    animation-name: layer;
+    animation-duration: 800ms;
+    animation-timing-function: easeInQuad;
+    animation-iteration-count: infinite ;
+}
+
+.layer-7 {
+    background: rgb(222, 170, 130);
+    bottom: 0;
+    height: 200px;
+    position: absolute;
+    right: 0;
+    width: 150px;
+    z-index: 7;
+    border-radius: 20px;
+    box-shadow:  5px 20px 30px 0 black;
+}
+
+.layer-8 {
+    bottom: 0;
+    height: 120px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 200px;
+    z-index: 8;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.layer-9 {
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+    width: 120px;
+    z-index: 9;
+    display: flex;
+}
+
+.layer-10 {
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    width: 120px;
+    z-index: 10;
+}
+/*/Estilizacion de los elementos/*/
+.left-ear--outer
+{
+    background-color: white;
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    left: 10px;
+
+}
+.left-ear--inner
+{
+    background: rgb(251,116,63);
+    background: linear-gradient(-150deg, rgb(242, 143, 204) 0%, rgba(252,70,107,1) 100%);    
+    border-radius: 90%;
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+
+}
+.right-ear--outer
+{
+    background-color: white;
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+
+}
+.right-ear--inner
+{
+    background: rgb(251,116,63);
+    background: linear-gradient(150deg, rgb(242, 143, 204) 0%, rgba(252,70,107,1) 100%);    
+    border-radius: 90%;
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+
+}
+.head
+{
+    background-color: white;
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    top: 25px;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.head__eye
+{
+    background-color: black;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: 15px;
+    display: flex;
+
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}    
+@keyframes blink
+{
+    0%
+    {
+        height: 4px;
+    } 
+    5%
+    {
+        height: 1px;
+        transform: translate(0px , 2px);        
+        background-color: rgb(255, 0, 0);
+    }
+    10%
+    {
+        transform: translate(0px , 0px);        
+        height: 4px;
+    }
+}
+.head__eye--left
+{
+    left: 20px;
+}
+.head__eye--right
+{
+    right: 20px;
+}
+.head__noise {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 15px 10px;
+    top: 21px;
+    border-color: transparent transparent #ff69b4 transparent;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 20px;
+    transform: rotate(180deg);
+}
+/*/Variaciones/*/
+.left-ear--variation-1 , .right-ear--variation-1 , .head-variation--brown
+{
+    background-color: rgb(239, 211, 191);
+}
+.left-ear--variation-2 , .right-ear--variation-2 , .head-variation--grey
+{
+    background-color: rgb(183, 183, 188);
+}
+/*/Montañas /*/
+.grass
+{
+    width: 100%;
+    height: 20px;
+    background-color: rgb(77, 155, 95);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.spikes-green
+{
+    height: 25px;
+    background: linear-gradient(-135deg, rgb(77, 155, 95)25%, transparent 25%) -25px 0,
+    linear-gradient(135deg, rgb(77, 155, 95)25%, transparent 25%) -25px 0,
+    linear-gradient(135deg, rgb(147, 97, 17) 35.36%, transparent 50%) -75px 0,
+    linear-gradient(-135deg, rgb(165, 119, 27) 35.36%, transparent 50%) -75px 0;
+    background-size: 25px 25px;
+}
+/*/Variaciones montaña/*/
+.variation-grass1
+{
+    background-color: rgb(114, 181, 130);
+}
+.variation-spikes-green1
+{
+    background: linear-gradient(-135deg, rgb(114, 181, 130)25%, transparent 25%) -25px 0,
+    linear-gradient(135deg, rgb(114, 181, 130)25%, transparent 25%) -25px 0,
+    linear-gradient(135deg, rgb(147, 97, 17) 35.36%, transparent 50%) -75px 0,
+    linear-gradient(-135deg, rgb(165, 119, 27) 35.36%, transparent 50%) -75px 0;
+    background-size: 25px 25px;
+}
+.variation-grass2
+{
+    background-color: rgb(89, 226, 121);
+}
+.variation-spikes-green2
+{
+    background: linear-gradient(-135deg, rgb(89, 226, 121)25%, transparent 25%) -25px 0,
+    linear-gradient(135deg, rgb(89, 226, 121)25%, transparent 25%) -25px 0,
+    linear-gradient(135deg, rgb(218, 170, 92) 35.36%, transparent 50%) -75px 0,
+    linear-gradient(-135deg, rgb(197, 152, 62) 35.36%, transparent 50%) -75px 0;
+    background-size: 25px 25px;
+}
+/*/Nubes/*/
+.layer-9 div:nth-child(n), .layer-10 div:nth-child(n)
+{
+    background-color:rgb(77, 155, 95)
+}
+.cloud-big
+{
+    width: 80px;
+    height: 100%;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 50px;
+}
+.cloud-middle
+{
+    width: 40px;
+    height: 65px;
+    bottom: 0;
+    position: absolute;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px ;
+    right: 0;
+}
+.cloud-big-variation
+{
+    right: 0;
+    position: absolute;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 50px;
+}
+.cloud-middle-variation
+{
+    left: 0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px ;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0 ;
+}
+/*/Lawn principal/*/
+.layer-8 div:nth-child(n)
+{
+    background-color: rgb(114, 181, 130);
+}
+.lawn-middle-1
+{
+    width: 55px;
+    height: 90px;
+    border-top-left-radius: 50px;
+}
+.lawn-big
+{
+    width: 90px;
+    height: 100%;
+    border-radius: 30px 40px 0 0;
+}
+.lawn-middle-2
+{
+    width: 55px;
+    height: 80px;
+    border-top-right-radius: 50px;
+}
